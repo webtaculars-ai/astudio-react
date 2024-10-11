@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { AppProvider } from "./contexts/AppContext";
 import Users from "./pages/Users";
+import Products from "./pages/Products";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         </nav>
         <Routes>
           <Route path="/users" element={<Users />} />
+          <Route path="/products" element={<Products />} />
         </Routes>
       </Router>
     </AppProvider>
