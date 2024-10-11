@@ -13,7 +13,14 @@ const Products = () => {
     setCurrentPage,
   } = useFetchData({ endpoint: "products" });
 
-  const columns = ["title", "brand", "category", "price"];
+  const columns = [
+    { key: "title", label: "TITLE" },
+    { key: "brand", label: "BRAND" },
+    { key: "category", label: "CATEGORY" },
+    { key: "price", label: "PRICE" },
+    { key: "stock", label: "STOCK" },
+    { key: "rating", label: "RATING" },
+  ];
 
   return (
     <div className="p-4">
