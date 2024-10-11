@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Neutra+Text&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Neutra Text', sans-serif;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;

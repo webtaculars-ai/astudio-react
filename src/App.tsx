@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { AppProvider } from "./contexts/AppContext";
 import Users from "./pages/Users";
+import "./index.css";
 import Products from "./pages/Products";
 
 function App() {

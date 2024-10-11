@@ -19,8 +19,8 @@ const Pagination: FC<PaginationProps> = ({
         <button
           key={page}
           onClick={() => onPageChange(page)}
-          className={`px-3 py-1 mx-1 ${
-            page === currentPage ? "bg-yellow-500" : "bg-grey"
+          className={`px-3 py-1 mx-1 rounded-full ${
+            page === currentPage ? "bg-yellow text-black" : "bg-grey text-black"
           }`}
         >
           {page}
