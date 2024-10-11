@@ -1,20 +1,17 @@
-import { useContext, useEffect, useState } from "react";
-import axios from "axios";
-import { AppContext } from "../../contexts/AppContext";
+import useFetchData from "../../hooks/useFetchData";
 import FilterDropdown from "../../components/FilterDropdown";
-import Table from "../../components/Tables";
+import Table from "../../components/Table";
+import Pagination from "../../components/Pagination";
 
 const Products = () => {
-  const { products, setProducts } = useContext(AppContext);
-  const [pageSize, setPageSize] = useState(5);
-
-  useEffect(() => {
-    axios
-      .get(`https://dummyjson.com/products?limit=${pageSize}`)
-      .then((res) => {
-        setProducts(res.data.products);
-      });
-  }, [pageSize, setProducts]);
+  const {
+    data: products,
+    pageSize,
+    currentPage,
+    totalPages,
+    setPageSize,
+    setCurrentPage,
+  } = useFetchData({ endpoint: "products" });
 
   const columns = ["title", "brand", "category", "price"];
 
@@ -26,6 +23,11 @@ const Products = () => {
         onChange={setPageSize}
       />
       <Table columns={columns} data={products} />
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+      />
     </div>
   );
 };
