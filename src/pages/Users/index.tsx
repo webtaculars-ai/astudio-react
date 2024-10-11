@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { AppContext } from "../../contexts/AppContext";
 import FilterDropdown from "../../components/FilterDropdown";
 import Table from "../../components/Tables";
 
 const Users = () => {
-  const [users, setUsers] = useState([]);
+  const { users, setUsers } = useContext(AppContext)!;
   const [pageSize, setPageSize] = useState(5);
 
   useEffect(() => {
