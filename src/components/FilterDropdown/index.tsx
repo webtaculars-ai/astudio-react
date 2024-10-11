@@ -12,11 +12,12 @@ const FilterDropdown: FC<FilterDropdownProps> = ({
   onChange,
 }) => {
   return (
-    <div className="relative inline-block">
+    <div className="flex items-center">
+      <span className="mr-2 text-sm">Entries</span>
       <select
         value={value}
         onChange={(e) => onChange(parseInt(e.target.value))}
-        className="bg-yellow-500 text-black rounded p-2"
+        className="bg-yellow text-black rounded p-2"
       >
         {options.map((opt) => (
           <option key={opt} value={opt}>
